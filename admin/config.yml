@@ -6,7 +6,7 @@ media_folder: "uploads"
 public_folder: "/uploads"
 
 collections:
-  # 1. Folder Collection (Generates new blog posts)
+  # 1. Folder Collection: Blog Posts (with customizable styling!)
   - name: "blog"
     label: "Blog Posts"
     folder: "content/blog"
@@ -16,16 +16,29 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Cover Image", name: "image", widget: "image" }
       - { label: "Author", name: "author", widget: "string" }
+      - { label: "Background Color", name: "bg_color", widget: "color", default: "#ffffff" }
+      - { label: "Text Color", name: "text_color", widget: "color", default: "#000000" }
+      - { label: "Font Choice", name: "font_family", widget: "select", options: ["Sans-Serif", "Serif", "Monospace"], default: "Sans-Serif" }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # 2. File Collection (Edits existing static pages!)
+  # 2. File Collection: Pages (for editing existing words, titles, and layout styling!)
   - name: "pages"
     label: "Pages"
-    delete: false # Safety setting to prevent deleting your page files
+    delete: false
     files:
-      - file: "content/about.md" # Change to the path of your about page file
+      - file: "content/about.md"
         label: "About Page"
         name: "about"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Background Color", name: "bg_color", widget: "color", default: "#ffffff" }
+          - { label: "Text Color", name: "text_color", widget: "color", default: "#000000" }
+          - { label: "Font Choice", name: "font_family", widget: "select", options: ["Sans-Serif", "Serif", "Monospace"], default: "Sans-Serif" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "content/contact.md"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Email Address", name: "email", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
