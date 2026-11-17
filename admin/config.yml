@@ -6,6 +6,7 @@ media_folder: "uploads"
 public_folder: "/uploads"
 
 collections:
+  # 1. Folder Collection (Generates new blog posts)
   - name: "blog"
     label: "Blog Posts"
     folder: "content/blog"
@@ -16,3 +17,15 @@ collections:
       - { label: "Cover Image", name: "image", widget: "image" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  # 2. File Collection (Edits existing static pages!)
+  - name: "pages"
+    label: "Pages"
+    delete: false # Safety setting to prevent deleting your page files
+    files:
+      - file: "content/about.md" # Change to the path of your about page file
+        label: "About Page"
+        name: "about"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
