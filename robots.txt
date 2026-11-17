@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/
+
+Sitemap: https://cyclopedia-health-hub.netlify.app/sitemap.xml
